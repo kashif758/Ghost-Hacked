@@ -14,20 +14,20 @@ canvas = tkinter.Canvas(root, width=width, height=height,
                         bg='black', highlightthickness=0)
 canvas.pack()
 
-# Gost image
-img = Image.open("gost.png")
-gost_img = ImageTk.PhotoImage(img)
+# Ghost image
+img = Image.open("ghost.png")
+ghost_img = ImageTk.PhotoImage(img)
 
-canvas.create_image(400, 400, image=gost_img)
+canvas.create_image(400, 400, image=ghost_img)
 
-def add_gost():
+def add_ghost():
     x = random.randint(0, width)
     y = random.randint(0, height)
-    canvas.create_image(x, y, image=gost_img)
-    root.after(500, add_gost)
+    canvas.create_image(x, y, image=ghost_img)
+    root.after(500, add_ghost)
 
 # enable window closing
 root.protocol('WM_DELETE_WINDOW', root.destroy)
 
-add_gost()
+add_ghost()
 root.mainloop()
